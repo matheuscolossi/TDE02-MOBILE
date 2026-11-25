@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DesafioMatematico.MainPage">
+  <ScrollView><VerticalStackLayout Padding="24,36" Spacing="16" MaximumWidthRequest="560" HorizontalOptions="Fill">
+    <Label Text="PROGRAMAÇÃO MOBILE" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource Accent}" />
+    <Label Text="Desafio Matemático" FontSize="30" FontAttributes="Bold" />
+    <Label Text="Treine seu raciocínio em 10 questões de 30 segundos." TextColor="#52647B" />
+    <VerticalStackLayout x:Name="Setup" Spacing="14">
+      <Border><VerticalStackLayout Spacing="10"><Label Text="Dificuldade" FontAttributes="Bold"/><Picker x:Name="DifficultyPicker" Title="Selecione a dificuldade" TextColor="#172033" TitleColor="#52647B"><Picker.Items><x:String>Fácil (1 a 10)</x:String><x:String>Médio (1 a 50)</x:String><x:String>Difícil (1 a 100)</x:String></Picker.Items></Picker></VerticalStackLayout></Border>
+      <Border><VerticalStackLayout Spacing="8"><Label Text="Operações" FontAttributes="Bold"/>
+        <HorizontalStackLayout><CheckBox x:Name="AddBox" IsChecked="True" Color="{StaticResource Accent}"/><Label Text="Adição (+)" VerticalOptions="Center"/></HorizontalStackLayout>
+        <HorizontalStackLayout><CheckBox x:Name="SubBox" IsChecked="True" Color="{StaticResource Accent}"/><Label Text="Subtração (−)" VerticalOptions="Center"/></HorizontalStackLayout>
+        <HorizontalStackLayout><CheckBox x:Name="MulBox" IsChecked="True" Color="{StaticResource Accent}"/><Label Text="Multiplicação (×)" VerticalOptions="Center"/></HorizontalStackLayout>
+        <HorizontalStackLayout><CheckBox x:Name="DivBox" IsChecked="True" Color="{StaticResource Accent}"/><Label Text="Divisão (÷)" VerticalOptions="Center"/></HorizontalStackLayout>
+      </VerticalStackLayout></Border>
+      <Label x:Name="SetupMessage" TextColor="#B91C1C"/>
+      <Button Text="Iniciar partida" Clicked="OnStart"/>
+    </VerticalStackLayout>
+    <VerticalStackLayout x:Name="Game" IsVisible="False" Spacing="14">
+      <Grid ColumnDefinitions="*,*"><Label x:Name="QuestionCount" FontAttributes="Bold"/><Label x:Name="ScoreLabel" Grid.Column="1" HorizontalTextAlignment="End" FontAttributes="Bold"/></Grid>
+      <ProgressBar x:Name="GameProgress" ProgressColor="{StaticResource Accent}" />
+      <Border><VerticalStackLayout Spacing="8"><Label x:Name="TimeLabel" Text="30 s" HorizontalTextAlignment="Center" FontSize="24" FontAttributes="Bold"/><ProgressBar x:Name="TimeProgress" Progress="1"/><Label x:Name="QuestionLabel" HorizontalTextAlignment="Center" FontSize="38" FontAttributes="Bold" Margin="0,12"/><Entry x:Name="Answer" Placeholder="Digite sua resposta" Keyboard="Numeric" MaxLength="5" TextChanged="OnAnswerChanged" Completed="OnSubmit"/><Button x:Name="SubmitButton" Text="Responder" Clicked="OnSubmit"/><Label x:Name="Feedback" HorizontalTextAlignment="Center" FontAttributes="Bold"/><Button x:Name="NextButton" Text="Próxima questão" IsVisible="False" Clicked="OnNext"/></VerticalStackLayout></Border>
+      <Button Text="Desistir da partida" BackgroundColor="#475569" Clicked="OnRestart"/>
+    </VerticalStackLayout>
+    <VerticalStackLayout x:Name="Summary" IsVisible="False" Spacing="14">
+      <Border><VerticalStackLayout Spacing="10"><Label Text="PARTIDA FINALIZADA" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource Accent}"/><Label x:Name="PerformanceLabel" FontSize="27" FontAttributes="Bold"/><Label x:Name="FinalScore" FontSize="23" FontAttributes="Bold"/><Label x:Name="StatsLabel"/><ProgressBar x:Name="AccuracyProgress" ProgressColor="{StaticResource Accent}"/><Label x:Name="TimeStats"/></VerticalStackLayout></Border>
+      <Button Text="Jogar novamente" Clicked="OnRestart"/>
+    </VerticalStackLayout>
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DesafioMatematico.App">
+    <Application.Resources><ResourceDictionary>
+      <Color x:Key="Accent">#0D9488</Color>
+      <Style TargetType="ContentPage"><Setter Property="BackgroundColor" Value="#F1F5F9" /></Style>
+      <Style TargetType="Label"><Setter Property="TextColor" Value="#172033" /><Setter Property="FontSize" Value="16" /></Style>
+      <Style TargetType="Entry"><Setter Property="BackgroundColor" Value="#FFFFFF" /><Setter Property="TextColor" Value="#172033" /><Setter Property="PlaceholderColor" Value="#64748B" /><Setter Property="HeightRequest" Value="48" /></Style>
+      <Style TargetType="Button"><Setter Property="BackgroundColor" Value="{StaticResource Accent}" /><Setter Property="TextColor" Value="White" /><Setter Property="CornerRadius" Value="10" /><Setter Property="FontAttributes" Value="Bold" /><Setter Property="MinimumHeightRequest" Value="48" /></Style>
+      <Style TargetType="Border"><Setter Property="BackgroundColor" Value="White" /><Setter Property="Stroke" Value="#DCE3ED" /><Setter Property="Padding" Value="16" /><Setter Property="StrokeShape" Value="RoundRectangle 14" /></Style>
+    </ResourceDictionary></Application.Resources>
+</Application>
